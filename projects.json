@@ -1,0 +1,282 @@
+[
+  {
+    "id": "nanosurge",
+    "type": "build",
+    "title": "NanoSurge",
+    "oneLiner": "A 3D multi agent simulation where autonomous nanobots learn to hunt infections inside the human bloodstream using reinforcement learning.",
+    "stack": [
+      "Unity 6",
+      "C#",
+      "ML Agents",
+      "Git"
+    ],
+    "thumb": "Assets/FirstProjectImage.png",
+    "heroImage": "Assets/NanoSurge.png",
+    "highlights": [
+      [
+        "Designed a 3D multi agent environment inspired by real world blood vessel flow instead of scripted AI behaviour.",
+        "Trained nanobot and virus agents using MARL, focusing on emergent behaviour rather than hardcoded logic.",
+        "Built custom simulation systems to keep learning stable under scale and prevent agents from breaking out of the environment.",
+        "Balanced reward shaping, exploration, and performance under strict academic deadlines."
+      ]
+    ],
+    "whatILearned": [
+      [
+        "Reward design matters more than agent complexity in multi agent learning systems.",
+        "Small configuration mistakes in training (YAML, rewards) can completely derail learning.",
+        "Some features fail not because they are wrong, but because timing and stability matter more.",
+        "Debug tooling and visualisation are essential when agents learn behaviours you did not explicitly program."
+      ]
+    ],
+    "sections": [
+      {
+        "title": "Why NanoSurge exists",
+        "text": "NanoSurge began as my MSc dissertation, but I deliberately wanted it to be more than a typical final project. After working on several traditional game systems, I wanted to explore something unfamiliar and risky. Around that time, I was playing AAA games that used learning based AI rather than predictable behaviour, which pushed me towards reinforcement learning. Discovering multi agent reinforcement learning changed everything. An idea that agents could learn movement, navigation and combat without gameplay scripts felt too powerful to ignore.",
+        "media": {
+          "type": "image",
+          "src": "Assets/FirstProjectImage.png"
+        }
+      },
+      {
+        "title": "From ideas to a risky direction",
+        "text": "Early concepts ranged from rescue drones navigating disaster zones to robots solving mazes. None of them felt exciting enough to justify the learning curve of MARL. The breakthrough came after encountering research discussions about nanobots being used for medical treatment. While the real world application is speculative, the idea of autonomous agents navigating blood vessels to eliminate infections felt immediately compelling as a simulation and a game system.",
+        "media": {
+          "type": "video",
+          "src": "https://drive.google.com/file/d/1p47Bs37bHiN6AomC54uNePQJQLZkEslZ/view?usp=drive_link"
+        }
+      },
+      {
+        "title": "Building a learning environment, not scripted AI",
+        "text": "Unlike traditional enemy AI, NanoSurge avoids hardcoded behaviour. Nanobots and virus agents are placed inside a flowing bloodstream environment and learn through interaction alone. Movement, pursuit, and combat are not explicitly programmed. Instead, agents learn through reward signals, collisions, and spatial constraints, making their behaviour unpredictable but emergent.",
+        "media": {
+          "type": "video",
+          "src": "https://drive.google.com/file/d/1EDk3X61G0T-rdICrFsy3Wk7nRqe2ec-Y/view?usp=drive_link"
+        }
+      },
+      {
+        "title": "When everything broke",
+        "text": "The most difficult phase was agent training. Early runs failed entirely agents exploited reward loopholes, drifted endlessly, or ignored objectives. Poor reward balance caused agents to optimise the wrong behaviours, while small YAML configuration mistakes invalidated days of training. With less than a month remaining before submission, the core idea that earned project approval was still unstable.",
+        "media": {
+          "type": "image",
+          "src": "Assets/NanoSurge Level .png",
+          "badge": "In-Engine picture"
+        }
+      },
+      {
+        "title": "Features that didn’t survive",
+        "text": "Two major systems were cut due to instability and time constraints. Virus agents were designed to multiply into groups, increasing difficulty dynamically, while nanobots could call nearby agents for assistance. Both systems worked in isolation but introduced learning instability at scale, causing agents to break environmental constraints or abandon objectives. Rather than force unfinished mechanics, these systems were intentionally removed to preserve training integrity.",
+        "media": {
+          "type": "image",
+          "src": "Assets/NanoSurge Training.png"
+        }
+      },
+      {
+        "title": "What would I rebuild next",
+        "text": "With more time, I would reintroduce virus multiplication and nanobot regrouping incrementally, focusing on stability before complexity. Understanding why agents escaped the vessel or stalled during regrouping is now a clear next step. These systems remain the most exciting extension points for future versions of NanoSurge.",
+        "media": {
+          "type": "image",
+          "src": "Assets/Feature Not In Use.png"
+        }
+      },
+      {
+        "title": "Why this project mattered to me",
+        "text": "NanoSurge was my first deep dive into machine learning for games, and it fundamentally changed how I think about AI. Watching agents learn behaviours I never explicitly coded was both frustrating and fascinating. More importantly, it gave me confidence that I can design learning based systems, not just scripted gameplay. This project opened the door to future work where AI behaviour emerges rather than being predefined.",
+        "media": {
+          "type": "image",
+          "src": "Assets/NanoSurge Rebuild.png",
+          "badge": "In-Engine picture"
+        }
+      }
+    ]
+  },
+  {
+    "id": "wreckfest",
+    "type": "build",
+    "title": "Wreckfest",
+    "oneLiner": "A small online multiplayer vehicle combat prototype focused on control feel, role based gameplay, and network safe systems.",
+    "stack": [
+      "Unity 6",
+      "C#"
+    ],
+    "thumb": "Assets/SecondProjectImage.png",
+    "heroImage": "Assets/Wreckfest .png",
+    "highlights": [
+      "Designed a two role multiplayer system where each vehicle is controlled by a driver and a shooter, requiring coordination rather than solo play.",
+      "Built a scalable vehicle controller using ScriptableObjects to balance different car types under the same input system.",
+      "Implemented turret-based combat with raycast and projectile weapons while accounting for network latency and performance.",
+      "Optimised a large, GPU heavy arena map by removing unused geometry, colliders, and shadows to significantly improve frame rate."
+    ],
+    "whatILearned": [
+      "Multiplayer exposes design flaws that single player systems completely hide.",
+      "Ownership and authority are more important than mechanics in networked games.",
+      "Fewer polished mechanics communicate intent better than many unstable features.",
+      "Performance optimisation often starts with removing things, not adding them."
+    ],
+    "gallery": [],
+    "sections": [
+      {
+        "title": "Why Wreckfest exists",
+        "text": "Wreckfest was developed as part of a Connected Games Development module, but my personal goal went beyond completing coursework. I had never built an online multiplayer game before and wanted to understand how real time gameplay systems behave once networking, authority, and synchronisation are involved. The project became a focused attempt to close that skill gap rather than build a content heavy game.",
+        "media": {
+          "type": "video",
+          "src": "https://drive.google.com/file/d/1VimD_6ZTqW9YnbyCWyPULF4q12TVC5ZH/view?usp=drive_link"
+        }
+      },
+      {
+        "title": "Finding the right idea",
+        "text": "Early brainstorming involved familiar ideas like tactical shooters and survival games, but these felt overused and risky within the timeline. Inspiration came from cooperative vehicle based games, combining the movement intensity of arcade driving with turret based combat. The final concept revolved around two teams, each vehicle controlled by two players: one driving and one shooting with the ability to swap roles mid match.",
+        "media": {
+          "type": "video",
+          "src": "https://drive.google.com/file/d/11LUXZtHWgTZmM-zKS3zJWp5vnhgUeJX_/view?usp=drive_link"
+        }
+      },
+      {
+        "title": "Designing for feel before features",
+        "text": "Most development time was spent tuning vehicle movement and handling. Two distinct vehicles were implemented a heavier muscle car and a lighter minivan each with different acceleration, turning, and drifting behaviour. A ScriptableObject driven setup allowed the same controller logic to support multiple vehicles while keeping balance manageable. Player testing and feedback cycles were critical to achieving readable and satisfying handling.",
+        "media": {
+          "type": "video",
+          "src": "https://drive.google.com/file/d/1sZxMGfGmoLEcYiyE7QKI45CV5dwnYIDS/view?usp=drive_link",
+          "badge": "In-Engine footage"
+        }
+      },
+      {
+        "title": "Camera, weapons, and combat",
+        "text": "Camera behaviour was deliberately split by role. Drivers received a wider view of the vehicle and environment, while shooters were given a tighter, turret focused perspective to prioritise aiming. Turret combat initially used projectile physics but was replaced with raycast based shooting to reduce network lag and improve consistency. A high damage rocket launcher was added as a high risk weapon with a long cooldown, encouraging timing and coordination.",
+        "media": {
+          "type": "video",
+          "src": "https://drive.google.com/file/d/1E8Qv2TgH04xpKraryVbZ_WNxF0ZYxHvV/view?usp=drive_link"
+        }
+      },
+      {
+        "title": "When multiplayer broke everything",
+        "text": "Converting single player mechanics to multiplayer revealed major flaws. Without proper ownership handling, players could control multiple cars, drive and shoot simultaneously, or end up on opposing teams while sharing a vehicle. These issues required restarting large parts of the implementation and forced a deeper understanding of authority, ServerRPCs, and ClientRPCs. This phase reshaped how I approach system design in networked games."
+      },
+      {
+        "title": "Environmental complexity and optimisation",
+        "text": "To increase gameplay depth, a sandstorm mechanic was introduced that dynamically altered vehicle behaviour during matches. This added unpredictability and environmental pressure, which was highlighted positively during evaluation. Performance optimisation was equally important, the arena map was heavily reworked by removing unseen geometry, unnecessary colliders, excess shadows, and introducing LODs, resulting in a significant FPS improvement.",
+        "media": [
+          {
+            "type": "image",
+            "src": "Assets/WreckfestEnv.png",
+            "badge": "In-Engine picture"
+          },
+          {
+            "type": "image",
+            "src": "Assets/WreckfestLevelImage.png",
+            "badge": "In-Engine picture"
+          }
+        ]
+      },
+      {
+        "title": "What I kept small, on purpose",
+        "text": "Only two vehicles and one map were included in the final build. This was a deliberate decision to maintain balance, reduce asset instability, and ensure mechanics were fully playable rather than partially implemented. Future content was scoped clearly but not forced into an already tight timeline.",
+        "media": {
+          "type": "image",
+          "src": "Assets/WreckfestCars.png",
+          "badge": "In-Engine picture"
+        }
+      },
+      {
+        "title": "What comes next?",
+        "text": "If extended further, Wreckfest would focus on expanding weapon variety, introducing new arenas with unique environmental effects, and improving damage feedback and power ups. With stronger networking foundations in place, future iterations would prioritise depth without sacrificing clarity or performance.",
+        "devlog":{
+          "url":"https://riteshhhh.itch.io/wreckfest",
+          "label":"Read more about the development on itch.io"
+        },
+        "media": {
+
+        }
+      }
+    ]
+  },
+  {
+    "id": "endlesscruiser",
+    "type": "build",
+    "title": "Endless Cruiser VR",
+    "oneLiner": "An endless car driving prototype that experiments with adaptive traffic using Q-learning and later evolved into a VR driving experience.",
+    "stack": [
+      "Unity 6",
+      "C#",
+      "XR Toolkit"
+    ],
+    "thumb": "Assets/EndlessCruiser.png",
+    "heroImage": "Assets/EndlessCruiser.png",
+    "highlights": [
+      "Built an endless driving system focused on learning core gameplay loops before visual polish.",
+      "Experimented with Q-learning to influence traffic spawning and dynamically increase challenge.",
+      "Extended a 3D prototype into VR to explore immersion and player perception at high speeds.",
+      "Solved early VR performance and motion sickness issues using object pooling and spawn management."
+    ],
+    "whatILearned": [
+      "Early experimentation is more valuable than perfect execution.",
+      "AI-driven systems can behave unpredictably if reward logic is not carefully constrained.",
+      "VR magnifies performance and camera issues that are easy to ignore in 3D games.",
+      "Clean separation of responsibilities in code becomes critical as complexity increases."
+    ],
+    "sections": [
+      {
+        "title": "Why Endless Cruiser exists",
+        "text": "Endless Cruiser was developed during my early game development journey as part of a 3D Games Programming module. I deliberately chose an endless driving format to keep the core gameplay simple while experimenting with advanced concepts like reinforcement learning and virtual reality. The goal was not to build a large game, but to create a controlled environment where I could learn, fail, and iterate.",
+        "media": {
+          "type": "video",
+          "src": "https://drive.google.com/file/d/1o5YZreYN_d11snIpwJi7s9WmRvaQ-nse/view?usp=drive_link"
+        }
+      },
+      {
+        "title": "Adaptive traffic instead of random spawning",
+        "text": "Rather than relying on purely random obstacle spawning, I experimented with Q-learning to influence how NPC cars appeared on the road. The idea was to create adaptive traffic that responded to the player’s lane position, rewarding situations that increased challenge and penalising congestion that felt unfair. While imperfect, this approach introduced unpredictability beyond traditional scripted logic.",
+        "media": {
+          "type": "video",
+          "src": "https://drive.google.com/file/d/1o5YZreYN_d11snIpwJi7s9WmRvaQ-nse/view?usp=drive_link"
+        }
+      },
+      {
+        "title": "What actually happened with Q-learning",
+        "text": "In practice, the Q-table increased difficulty but also revealed its limitations. NPC cars frequently spawned in the player’s lane, sometimes creating one sided traffic patterns. Despite this, the system demonstrated learning behaviour by consistently placing obstacles ahead of the player to maximise challenge. Seeing an AI driven system influence gameplay in my second ever game was a major milestone in my learning process.",
+        "media": {
+          "type": "image",
+          "src": "Assets/Q-table EndlessCruiser.png"
+        }
+      },
+      {
+        "title": "Transitioning from 3D to VR",
+        "text": "The project initially began as a standard 3D game. Once the core systems were functional, VR support was introduced to explore immersion and driving realism. The shift fundamentally changed the experience: high speed driving became more intense, and even simple mechanics felt significantly more impactful when viewed from inside the vehicle.",
+        "media": [
+          {
+            "type": "video",
+            "src": "https://drive.google.com/file/d/1hh9N8oPVo_Y8QOVVa6jA6Txm1H3Tg0jB/view?usp=drive_link",
+            "badge": "In-Engine footage"
+          },
+          {
+            "type": "video",
+            "src": "https://drive.google.com/file/d/1twZs9MmA83dCmrwjSaxExKMffE3M_Djz/view?usp=drive_link",
+            "badge": "In-Engine footage"
+          
+          }
+    ]
+      },
+      {
+        "title": "VR challenges and performance fixes",
+        "text": "VR introduced major challenges, including inconsistent camera positioning, performance drops, and early motion sickness. Continuous object instantiation caused low frame rates, so an object pooling system was implemented to recycle NPC cars efficiently. Vehicles behind the player were returned to the pool and reused ahead of the player, significantly improving FPS and reducing discomfort.",
+        "media": {
+          "type": "video",
+          "src": "https://drive.google.com/file/d/1HTsou9DxnRAZMAo8k7ABhunOjWeehMiX/view?usp=drive_link",
+          "badge":"In-Engine footage"
+        }
+      },
+      {
+        "title": "What I’m proud of",
+        "text": "As one of my earliest projects, Endless Cruiser represents my first successful integration of reinforcement learning, VR, and performance optimisation in a single prototype. Implementing a Q-table and a VR driving experience this early in my journey gave me confidence to take on more complex systems in later projects.",
+        "media": {
+          "type": "video",
+          "src": "https://drive.google.com/file/d/1twZs9MmA83dCmrwjSaxExKMffE3M_Djz/view?usp=drive_link",
+          "badge":"In-Engine footage"
+        }
+      },
+      {
+        "title": "Lessons that shaped later projects",
+        "text": "This project highlighted the importance of clean code structure, separation of responsibilities, and choosing the right tools early. Poor abstraction and overloading scripts became clear pain points. These lessons directly influenced how I structured and approached subsequent projects, leading to more maintainable and scalable systems."
+      }
+    ]
+  }
+]
