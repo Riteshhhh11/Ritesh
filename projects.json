@@ -12,22 +12,6 @@
     ],
     "thumb": "Assets/FirstProjectImage.png",
     "heroImage": "Assets/NanoSurge.png",
-    "highlights": [
-      [
-        "Designed a 3D multi agent environment inspired by real world blood vessel flow instead of scripted AI behaviour.",
-        "Trained nanobot and virus agents using MARL, focusing on emergent behaviour rather than hardcoded logic.",
-        "Built custom simulation systems to keep learning stable under scale and prevent agents from breaking out of the environment.",
-        "Balanced reward shaping, exploration, and performance under strict academic deadlines."
-      ]
-    ],
-    "whatILearned": [
-      [
-        "Reward design matters more than agent complexity in multi agent learning systems.",
-        "Small configuration mistakes in training (YAML, rewards) can completely derail learning.",
-        "Some features fail not because they are wrong, but because timing and stability matter more.",
-        "Debug tooling and visualisation are essential when agents learn behaviours you did not explicitly program."
-      ]
-    ],
     "sections": [
       {
         "title": "Why NanoSurge exists",
@@ -201,18 +185,6 @@
     ],
     "thumb": "Assets/EndlessCruiser.png",
     "heroImage": "Assets/EndlessCruiser.png",
-    "highlights": [
-      "Built an endless driving system focused on learning core gameplay loops before visual polish.",
-      "Experimented with Q-learning to influence traffic spawning and dynamically increase challenge.",
-      "Extended a 3D prototype into VR to explore immersion and player perception at high speeds.",
-      "Solved early VR performance and motion sickness issues using object pooling and spawn management."
-    ],
-    "whatILearned": [
-      "Early experimentation is more valuable than perfect execution.",
-      "AI-driven systems can behave unpredictably if reward logic is not carefully constrained.",
-      "VR magnifies performance and camera issues that are easy to ignore in 3D games.",
-      "Clean separation of responsibilities in code becomes critical as complexity increases."
-    ],
     "sections": [
       {
         "title": "Why Endless Cruiser exists",
@@ -276,6 +248,80 @@
       {
         "title": "Lessons that shaped later projects",
         "text": "This project highlighted the importance of clean code structure, separation of responsibilities, and choosing the right tools early. Poor abstraction and overloading scripts became clear pain points. These lessons directly influenced how I structured and approached subsequent projects, leading to more maintainable and scalable systems."
+      }
+    ]
+  },
+  {
+    "id": "MissingReferenceTool",
+    "type": "Editor Tool",
+    "title": "Missing Reference Finder",
+    "oneLiner": "An internal Unity Editor Diagnostic Tool designed to automate project-wide audits, identifying corrupted object references and unlinked scripts across scenes and prefabs before build deployment.",
+    "stack": [
+      "Unity 6",
+      "C#",
+      "IMGUI"
+    ],
+    "thumb": "Assets/EndlessCruiser.png",
+    "heroImage": "Assets/EndlessCruiser.png",
+    "sections": [
+      {
+        "title": "Why I'm building this tool",
+        "text": "As Unity projects grow, renaming files, moving folders, and deleting old assets frequently breaks component references under the hood. I started building this tool as a pre-flight check before testing or compiling builds, with the goal of catching missing links and broken scripts before they turn into runtime null reference errors.",
+        "media": {
+          "type": "video",
+          "src": "https://drive.google.com/file/d/1o5YZreYN_d11snIpwJi7s9WmRvaQ-nse/view?usp=drive_link"
+        }
+      },
+      {
+        "title": "The core problem to solve",
+        "text": "Checking every scene and prefab by hand is slow and unreliable, especially since some broken references appear empty while secretly holding missing asset IDs. I wanted to build a simple Editor Window that automates this check across the Assets folder instead of relying on manual inspection.",
+        "media": {
+          "type": "video",
+          "src": "https://drive.google.com/file/d/1o5YZreYN_d11snIpwJi7s9WmRvaQ-nse/view?usp=drive_link"
+        }
+      },
+      {
+        "title": "Implementing safe scene and prefab scanning",
+        "text": "To scan scenes without disrupting active work in the editor, I set up the tool to load scenes additively in the background, inspect the root objects, and close them when finished. For prefabs, the tool traverses the hierarchy recursively to ensure child objects aren't skipped.",
+        "media": {
+          "type": "image",
+          "src": "Assets/Q-table EndlessCruiser.png"
+        }
+      },
+      {
+        "title": "Working with Unity's Serialization",
+        "text": "Rather than standard reflection, I used SerializedObject and SerializedProperty to read Unity's raw serialized data directly. The tool identifies missing references by checking for null object references that still contain a non-zero instance ID, alongside null-checks for missing MonoScripts.",
+        "media": [
+          {
+            "type": "video",
+            "src": "https://drive.google.com/file/d/1hh9N8oPVo_Y8QOVVa6jA6Txm1H3Tg0jB/view?usp=drive_link",
+            "badge": "In-Engine footage"
+          },
+          {
+            "type": "video",
+            "src": "https://drive.google.com/file/d/1twZs9MmA83dCmrwjSaxExKMffE3M_Djz/view?usp=drive_link",
+            "badge": "In-Engine footage"
+          
+          }
+    ]
+      },
+      {
+        "title": "Current scope & early limitations",
+        "text": "The prototype currently focuses solely on .prefab and .unity files within the project's Assets directory. It outputs findings to a scrollable IMGUI list inside a custom EditorWindow so broken assets can be reviewed in one place.",
+        "media": {
+          "type": "video",
+          "src": "https://drive.google.com/file/d/1HTsou9DxnRAZMAo8k7ABhunOjWeehMiX/view?usp=drive_link",
+          "badge":"In-Engine footage"
+        }
+      },
+      {
+        "title": "What I'm working on next",
+        "text": "Because the tool is still under active development, the next steps are adding clickable entries that ping broken objects directly in the hierarchy, expanding checks to ScriptableObjects and Materials, and refining the scanning performance on larger asset sets.",
+        "media": {
+          "type": "video",
+          "src": "https://drive.google.com/file/d/1twZs9MmA83dCmrwjSaxExKMffE3M_Djz/view?usp=drive_link",
+          "badge":"In-Engine footage"
+        }
       }
     ]
   }
