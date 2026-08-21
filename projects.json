@@ -1,6 +1,7 @@
 [
   {
     "id": "nanosurge",
+    "build": "Completed",
     "type": "build",
     "title": "NanoSurge",
     "oneLiner": "A 3D multi agent simulation where autonomous nanobots learn to hunt infections inside the human bloodstream using reinforcement learning.",
@@ -75,6 +76,7 @@
   },
   {
     "id": "wreckfest",
+    "build": "Completed",
     "type": "build",
     "title": "Wreckfest",
     "oneLiner": "A small online multiplayer vehicle combat prototype focused on control feel, role based gameplay, and network safe systems.",
@@ -84,18 +86,6 @@
     ],
     "thumb": "Assets/SecondProjectImage.png",
     "heroImage": "Assets/Wreckfest .png",
-    "highlights": [
-      "Designed a two role multiplayer system where each vehicle is controlled by a driver and a shooter, requiring coordination rather than solo play.",
-      "Built a scalable vehicle controller using ScriptableObjects to balance different car types under the same input system.",
-      "Implemented turret-based combat with raycast and projectile weapons while accounting for network latency and performance.",
-      "Optimised a large, GPU heavy arena map by removing unused geometry, colliders, and shadows to significantly improve frame rate."
-    ],
-    "whatILearned": [
-      "Multiplayer exposes design flaws that single player systems completely hide.",
-      "Ownership and authority are more important than mechanics in networked games.",
-      "Fewer polished mechanics communicate intent better than many unstable features.",
-      "Performance optimisation often starts with removing things, not adding them."
-    ],
     "gallery": [],
     "sections": [
       {
@@ -175,6 +165,7 @@
   },
   {
     "id": "endlesscruiser",
+    "build": "Completed",
     "type": "build",
     "title": "Endless Cruiser VR",
     "oneLiner": "An endless car driving prototype that experiments with adaptive traffic using Q-learning and later evolved into a VR driving experience.",
@@ -252,7 +243,226 @@
     ]
   },
   {
+    "id": "Threshold",
+    "build": "Prototype",
+    "type": "build",
+    "title": "Threshold",
+    "oneLiner": "Break out of the basement, unlock the mansion, and outsmart the keeper before you’re dragged back into the dark.",
+    "stack": [
+      "Unity 6",
+      "C#"
+    ],
+    "thumb": "Assets/Threshold.png",
+    "heroImage": "Assets/Threshold.png",
+    "sections": [
+      {
+        "title": "Why Threshold exists",
+        "text": "I love tense, atmospheric first-person experiences, and I wanted to build an escape game where tension comes from peeling back layers of confinement rather than simple jump scares. Threshold started as a pure passion project to explore classic escape-room puzzles set in a sprawling, locked-down mansion. The core goal was to take the player from a small victory—escaping a basement cell—straight into the realization that the entire isolated estate is an even larger cage.",
+        "media": {
+          "type": "video",
+          "src": "https://drive.google.com/file/d/1KWcxkn7gjnfBK5UajmLfEdtJFmw6TVrT/view?usp=sharing",
+          "badge":"In-Engine footage"
+        }
+      },
+      {
+        "title": "The core gameplay loop",
+        "text": "The game focuses on first-person exploration, observation, and logical problem solving. The player starts with zero context in a subterranean cell and must inspect their surroundings to find an initial way out. Once in the main mansion, progress relies on discovering clues, managing inventory items, and cracking distinct lock types to gradually open new wings of the house while uncovering why this place exists.",
+        "media": {
+          "type": "video",
+          "src": "https://drive.google.com/file/d/1KuXjMpecM5IBY5HulrdRNgogZN9D1odR/view?usp=sharing",
+          "badge":"In-Engine footage"
+        }
+      },
+      {
+        "title": "Interactive puzzle mechanics",
+        "text": "To keep the escape room feel tactile, I built a modular interaction system covering multiple lock and puzzle types. Current mechanics include physical key-and-lock doors, numeric keypads with custom code validation, and multi-dial combination locks. Each system is designed to plug directly into an inventory manager, letting the player inspect collected items and apply solutions seamlessly.",
+        "media": {
+          "type": "video",
+          "src": "https://drive.google.com/file/d/1Sfh8xbQGDlmZG-9CkC9B0N4g5O4Bzb12/view?usp=sharing",
+          "badge":"In-Engine footage"
+        }
+      },
+      {
+        "title": "Designing tension & the patrolling AI",
+        "text": "Puzzles alone can feel static, so the next major milestone is an active pursuer AI. The moment the player breaches the basement, a patrolling entity begins sweeping the estate. Rather than an instant game-over, the AI is designed to capture the player and drag them back to the basement cell, resetting physical room states while keeping the player's mental knowledge intact. This turns every lock-picking attempt into a high-stakes race against time.",
+        "media": [
+          {
+            "type": "image",
+            "src": "Assets/Threshold Navmesh.png",
+            "badge": "In-Engine picture"
+          },
+          {
+            "type": "image",
+            "src": "Assets/Threshold Navmesh2.png",
+            "badge": "In-Engine picture"
+          
+          }
+    ]
+      },
+      {
+        "title": "Current status & road ahead",
+        "text": "Threshold is currently a functional prototype with core first-person movement, an inventory system, and working locks in-engine. As of now, players can search for hidden keys to unlock doors and crack safe combinations, with several more complex, multi-step mechanical puzzles actively under development. Because this is an ongoing passion project driven by my love for building games, the next major milestones include rolling out these new puzzle types, implementing the NavMesh-driven pursuer AI, and expanding the environmental storytelling.",
+        "media": {
+          "type": "image",
+          "src": "Assets/ThresholdExpansion.png",
+          "badge":"In-Engine picture"
+        }
+      }
+    ]
+  },
+  {
     "id": "MissingReferenceTool",
+    "build": "Prototype",
+    "type": "Editor Tool",
+    "title": "Missing Reference Finder",
+    "oneLiner": "An internal Unity Editor Diagnostic Tool designed to automate project-wide audits, identifying corrupted object references and unlinked scripts across scenes and prefabs before build deployment.",
+    "stack": [
+      "Unity 6",
+      "C#",
+      "IMGUI"
+    ],
+    "thumb": "Assets/EndlessCruiser.png",
+    "heroImage": "Assets/EndlessCruiser.png",
+    "sections": [
+      {
+        "title": "Why I'm building this tool",
+        "text": "As Unity projects grow, renaming files, moving folders, and deleting old assets frequently breaks component references under the hood. I started building this tool as a pre-flight check before testing or compiling builds, with the goal of catching missing links and broken scripts before they turn into runtime null reference errors.",
+        "media": {
+          "type": "video",
+          "src": "https://drive.google.com/file/d/1o5YZreYN_d11snIpwJi7s9WmRvaQ-nse/view?usp=drive_link"
+        }
+      },
+      {
+        "title": "The core problem to solve",
+        "text": "Checking every scene and prefab by hand is slow and unreliable, especially since some broken references appear empty while secretly holding missing asset IDs. I wanted to build a simple Editor Window that automates this check across the Assets folder instead of relying on manual inspection.",
+        "media": {
+          "type": "video",
+          "src": "https://drive.google.com/file/d/1o5YZreYN_d11snIpwJi7s9WmRvaQ-nse/view?usp=drive_link"
+        }
+      },
+      {
+        "title": "Implementing safe scene and prefab scanning",
+        "text": "To scan scenes without disrupting active work in the editor, I set up the tool to load scenes additively in the background, inspect the root objects, and close them when finished. For prefabs, the tool traverses the hierarchy recursively to ensure child objects aren't skipped.",
+        "media": {
+          "type": "image",
+          "src": "Assets/Q-table EndlessCruiser.png"
+        }
+      },
+      {
+        "title": "Working with Unity's Serialization",
+        "text": "Rather than standard reflection, I used SerializedObject and SerializedProperty to read Unity's raw serialized data directly. The tool identifies missing references by checking for null object references that still contain a non-zero instance ID, alongside null-checks for missing MonoScripts.",
+        "media": [
+          {
+            "type": "video",
+            "src": "https://drive.google.com/file/d/1hh9N8oPVo_Y8QOVVa6jA6Txm1H3Tg0jB/view?usp=drive_link",
+            "badge": "In-Engine footage"
+          },
+          {
+            "type": "video",
+            "src": "https://drive.google.com/file/d/1twZs9MmA83dCmrwjSaxExKMffE3M_Djz/view?usp=drive_link",
+            "badge": "In-Engine footage"
+          
+          }
+    ]
+      },
+      {
+        "title": "Current scope & early limitations",
+        "text": "The prototype currently focuses solely on .prefab and .unity files within the project's Assets directory. It outputs findings to a scrollable IMGUI list inside a custom EditorWindow so broken assets can be reviewed in one place.",
+        "media": {
+          "type": "video",
+          "src": "https://drive.google.com/file/d/1HTsou9DxnRAZMAo8k7ABhunOjWeehMiX/view?usp=drive_link",
+          "badge":"In-Engine footage"
+        }
+      },
+      {
+        "title": "What I'm working on next",
+        "text": "Because the tool is still under active development, the next steps are adding clickable entries that ping broken objects directly in the hierarchy, expanding checks to ScriptableObjects and Materials, and refining the scanning performance on larger asset sets.",
+        "media": {
+          "type": "video",
+          "src": "https://drive.google.com/file/d/1twZs9MmA83dCmrwjSaxExKMffE3M_Djz/view?usp=drive_link",
+          "badge":"In-Engine footage"
+        }
+      }
+    ]
+  },
+  {
+    "id": "WordWatch",
+    "build": "Under Development",
+    "type": "Editor Tool",
+    "title": "Missing Reference Finder",
+    "oneLiner": "An internal Unity Editor Diagnostic Tool designed to automate project-wide audits, identifying corrupted object references and unlinked scripts across scenes and prefabs before build deployment.",
+    "stack": [
+      "Unity 6",
+      "C#",
+      "IMGUI"
+    ],
+    "thumb": "Assets/EndlessCruiser.png",
+    "heroImage": "Assets/EndlessCruiser.png",
+    "sections": [
+      {
+        "title": "Why I'm building this tool",
+        "text": "As Unity projects grow, renaming files, moving folders, and deleting old assets frequently breaks component references under the hood. I started building this tool as a pre-flight check before testing or compiling builds, with the goal of catching missing links and broken scripts before they turn into runtime null reference errors.",
+        "media": {
+          "type": "video",
+          "src": "https://drive.google.com/file/d/1o5YZreYN_d11snIpwJi7s9WmRvaQ-nse/view?usp=drive_link"
+        }
+      },
+      {
+        "title": "The core problem to solve",
+        "text": "Checking every scene and prefab by hand is slow and unreliable, especially since some broken references appear empty while secretly holding missing asset IDs. I wanted to build a simple Editor Window that automates this check across the Assets folder instead of relying on manual inspection.",
+        "media": {
+          "type": "video",
+          "src": "https://drive.google.com/file/d/1o5YZreYN_d11snIpwJi7s9WmRvaQ-nse/view?usp=drive_link"
+        }
+      },
+      {
+        "title": "Implementing safe scene and prefab scanning",
+        "text": "To scan scenes without disrupting active work in the editor, I set up the tool to load scenes additively in the background, inspect the root objects, and close them when finished. For prefabs, the tool traverses the hierarchy recursively to ensure child objects aren't skipped.",
+        "media": {
+          "type": "image",
+          "src": "Assets/Q-table EndlessCruiser.png"
+        }
+      },
+      {
+        "title": "Working with Unity's Serialization",
+        "text": "Rather than standard reflection, I used SerializedObject and SerializedProperty to read Unity's raw serialized data directly. The tool identifies missing references by checking for null object references that still contain a non-zero instance ID, alongside null-checks for missing MonoScripts.",
+        "media": [
+          {
+            "type": "video",
+            "src": "https://drive.google.com/file/d/1hh9N8oPVo_Y8QOVVa6jA6Txm1H3Tg0jB/view?usp=drive_link",
+            "badge": "In-Engine footage"
+          },
+          {
+            "type": "video",
+            "src": "https://drive.google.com/file/d/1twZs9MmA83dCmrwjSaxExKMffE3M_Djz/view?usp=drive_link",
+            "badge": "In-Engine footage"
+          
+          }
+    ]
+      },
+      {
+        "title": "Current scope & early limitations",
+        "text": "The prototype currently focuses solely on .prefab and .unity files within the project's Assets directory. It outputs findings to a scrollable IMGUI list inside a custom EditorWindow so broken assets can be reviewed in one place.",
+        "media": {
+          "type": "video",
+          "src": "https://drive.google.com/file/d/1HTsou9DxnRAZMAo8k7ABhunOjWeehMiX/view?usp=drive_link",
+          "badge":"In-Engine footage"
+        }
+      },
+      {
+        "title": "What I'm working on next",
+        "text": "Because the tool is still under active development, the next steps are adding clickable entries that ping broken objects directly in the hierarchy, expanding checks to ScriptableObjects and Materials, and refining the scanning performance on larger asset sets.",
+        "media": {
+          "type": "video",
+          "src": "https://drive.google.com/file/d/1twZs9MmA83dCmrwjSaxExKMffE3M_Djz/view?usp=drive_link",
+          "badge":"In-Engine footage"
+        }
+      }
+    ]
+  },
+  {
+    "id": "InvSystem",
+    "build": "Under Development",
     "type": "Editor Tool",
     "title": "Missing Reference Finder",
     "oneLiner": "An internal Unity Editor Diagnostic Tool designed to automate project-wide audits, identifying corrupted object references and unlinked scripts across scenes and prefabs before build deployment.",
